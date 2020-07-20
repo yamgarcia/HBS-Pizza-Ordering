@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Pizza App</title>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <style>      
+            table {
+            display: inline;
+            text-align: center;
+            margin: 15px;
+            width: 40px;
+            }
+            table tr th {
+            color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container px-lg-5">
+            <div class="row justify-content-center">
+                <h1> Pizza </h1>
+            </div>
+        </div>
+        <div class="container px-lg-5">
+            <div class="row justify-content-center">
+                <p>Your order: </p><br/>
+                    <br>
+                    <p><span class="spanInfo"> <b> {{size}}</b></span> <b>size</b>
+                        pizza
+                        with <span class="spanInfo"><b>{{crust}}</b></span>
+                        crust
+                    </p>
+
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div style="row justify-content-md-center">
+                    <h5>Your pizza:</h5>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div style="row justify-content-md-center">
+                    <div class="col col-lg-2">
+                        <table class="table">
+                            {{!-- <tr>
+                                {{#each pizzaPrice}}
+                                <td>{{this}}</td>
+                                {{/each}}
+                            </tr> --}}
+                            <tr>
+                                <th>{{size}}: </th>
+                                <td>${{sizePrice}}</td>
+                            </tr>
+                            <tr>
+                                <th>{{crust}}: </th>
+                                <td>${{crustPrice}}</td>
+                            </tr>
+                            <tr>
+                                <th>Quantity: </th>
+                                <td><b>{{qty}}</b></td>
+                            </tr>
+                            <tr>
+                                <th>Toppings: </th>
+                                {{#each toppings}}
+                                <td>{{this}}</td>
+                            </tr>
+                            {{/each}}
+                        </table>
+                    </div>
+                    <div class="col-md-auto">
+
+                        <table class="table">
+                            <tr>
+                                <th>SUBTOTAL:</th>
+
+                                <td><b>{{suTotal}}</b></td>
+                            </tr>
+                            <tr>
+                                <th>TAXES:</th>
+
+                                <td><b>{{taxesValue}}</b></td>
+                            </tr>
+                            <tr>
+                                <th>TOTAL:</th>
+
+                                <td><b>{{totalValue}}</b></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="row justify-content-center">
+
+                    <h4><b>Verify your info </b></h4>
+                </div>
+                <div class="row justify-content-center">
+
+                    <p>Name: <span class="spanInfo"><b>{{firstName}}
+                                {{lastName}}
+                            </b></span> </p>
+                </div>
+                <div class="row justify-content-center">
+
+                    <p>Address: <span class="spanInfo"><b>"{{address}}"</b></span></p>
+                </div>
+                <div class="row justify-content-center">
+
+                    <p>We'll call <span class="spanInfo"><b>{{phone}}</b></span>
+                        when
+                        it arrives</p>
+                    <div class="form">
+                        <form id="formPost" action="/thankyou" method="POST">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="row justify-content-center">
+                    <form action="/" method="get" id="formGet">
+                        <button form="formPost" class="btn btn-md btn-success"
+                            type="submit" name="submit">Confirm
+                        </button>
+                        <button form="formGet" class="btn btn-md btn-danger"
+                            formmethod="get"
+                            name="cancel">Cancel
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </body>
+    </html>

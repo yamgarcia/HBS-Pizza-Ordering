@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Pizza App</title>
+      <link rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+   </head>
+   <body>
+      <div class="row justify-content-center">
+         <div class="cal-4">
+            <h1> Pizza </h1>
+            <br>
+            <h2> Build your pizza below </h2>
+         </div>
+      </div>
+      <form action="/confirmation" method="POST">
+         <div class="container px-lg-5">
+            <div class="row mx-lg-n5">
+               <div class="col py-3 px-lg-5 border bg-light">
+                  <div class="form-group">
+                     <p>Please select at least one topping</p>
+                     <h4>Toppings:</h4>
+                     {{#each pToppings}}
+                     <p>
+                        <label>
+                           <input name="toppings" value="{{this}}"
+                              type="checkbox" />
+                           <span>{{this}}</span>
+                        </label>
+                     </p>
+                     {{/each}}
+                     <div class="input-field col s6">
+                        <input id="qty" name="qty" type="number"
+                           class="validate" value="1" min="1" max="10">
+                        <label for="qty">Amount</label>
+                     </div>
+                  </div>
+               </div>
+               <div class="col py-3 px-lg-5 border bg-light">
+                  <div>
+                     <h4>Crust Type:</h4>
+                     {{#each pCrust}}
+                     <p>
+                        <label>
+                           <input name="crust" value="{{this}}" type="radio"
+                              checked />
+                           <span>{{this}}</span>
+                        </label>
+                     </p>
+                     {{/each}}
+                     <h4>Size:</h4>
+                     {{#each pSize}}
+                     <p>
+                        <label>
+                           <input name="size" value="{{this}}" type="radio"
+                              checked />
+                           <span>{{this}}</span>
+                        </label>
+                     </p>
+                     {{/each}}
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div style="text-align: center">
+               <h4>Billing information:</h4>
+               <ul class="list-group">
+                  <li class="list-group-item list-group-item-primary m-3">
+                     Please fill the form below. All fields riquired.</li>
+               </ul>
+            </div>
+         </div>
+         <div>
+            <div class="container px-lg-5">
+               <div class="row justify-content-center">
+                  <div class="col-4">
+                     <input id="firstName" value="John" placeholder="First
+                        Name" name="firstName" type="text"
+                        class="validate">
+                     <label for="firstName">First Name</label>
+                     <br>
+                     <input id="phone" value="1234567890"
+                        placeholder="xxx-xxx-xxxx" name="phone"
+                        type="tel" class="validate">
+                     <label for="phone">Phone Number</label>
+                  </div>
+                  <div class="col-4">
+                     <input id="lastName" value="Doe"
+                        placeholder="Last Name" name="lastName"
+                        type="text" class="validate">
+                     <label for="lastName">Last Name</label>
+
+                     <br>
+                     <input id="address" value="1234 Main st."
+                        placeholder="Address" name="address"
+                        type="text" class="validate">
+                     <label for="address">Address</label>
+                  </div>
+               </div>
+               <br>
+            </div>
+         </div>
+         <div style="text-align: center">
+            <button class="btn btn-primary btn-md m-3" type="submit"
+               name="submit">Submit
+            </button>
+         </div>
+      </form>
+   </body>
+</html>

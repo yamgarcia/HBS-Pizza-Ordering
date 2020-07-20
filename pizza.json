@@ -1,0 +1,28 @@
+[
+    {
+        "size" : {
+            "Small" : 10, 
+            "Regular" : 12 , 
+            "Big":  15,
+            "Family": 20
+        },
+     
+        "crust": {
+            "Soft Pan" : 2 , 
+            "Crispy Thin" :  2 , 
+            "Cheese In" : 3 , 
+            "Sausage " :  3 
+        },
+
+        "toppings": {
+            "Onion" :  1 , 
+            "Tomatoes" :  1, 
+            "Cheese" :  1 ,
+            "Meat" :  4, 
+            "Pepperoni" :  3 , 
+            "Sausage" : 3 , 
+            "Chicken" :  3 , 
+            "Bacon" :  2 
+        }
+    }
+]
